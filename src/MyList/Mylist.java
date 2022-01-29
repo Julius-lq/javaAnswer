@@ -61,7 +61,7 @@ public class Mylist {
      */
     public boolean addAll(Object[] other) {
         for (int i = 0; i < other.length; i++) {
-            this.add(other);
+            this.add(other[i]);
         }
         return this.containsAll(other);
     }
