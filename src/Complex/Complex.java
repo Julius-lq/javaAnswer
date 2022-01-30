@@ -3,10 +3,12 @@ package Complex;
 import java.math.*;
 
 /**
+ * @author: liuqing
+ * date: 2022/1/30 15:04
+ * Description:复数类
  * @author: yuansk
  * @date: 2021/1/26 / 17:16
- * @description: 复数类
- * 复数表示： a + bi，
+ * @description: 复数表示： a + bi，
  * 属性:
  * 实部a ，虚部b，均为整数
  * <p>
