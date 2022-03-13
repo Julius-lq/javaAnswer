@@ -1,4 +1,4 @@
-package Complex;
+package complex;
 
 /**
  * 必须完成：设计复数类，运行主函数，结果如图片：result.jpg所示

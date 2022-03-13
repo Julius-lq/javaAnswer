@@ -1,7 +1,6 @@
-package MyList;
+package mylist;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * 作业要求：实现myList的所有函数，并对所有函数以合适的方法测试

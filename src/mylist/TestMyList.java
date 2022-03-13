@@ -1,4 +1,4 @@
-package MyList;
+package mylist;
 
 /**
  * @author:liuqing
