@@ -33,6 +33,7 @@
   public boolean equals(Object obj) {} 
   public String toString() {} 
   ```
+
 Car类示例
 
   ```
@@ -72,8 +73,6 @@ Car类示例
       public String toString() {//略}
   }
   ```
-
-
 
 * Car类子类，要求至少写3个Car类子类作为具体汽车类子类示例
 

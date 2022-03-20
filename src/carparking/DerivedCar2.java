@@ -2,18 +2,18 @@ package carparking;
 
 import java.io.Serializable;
 
-public class HonQi extends Car implements Serializable {
-    public HonQi(String number) {
+public class DerivedCar2 extends Car implements Serializable {
+    public DerivedCar2(String number) {
         super(number);
     }
 
     @Override
     protected String initBrand() {
-        return "红旗";
+        return "长安";
     }
 
     @Override
     protected String initModel() {
-        return "红旗H7 1.8T";
+        return "CS55PLUS";
     }
 }

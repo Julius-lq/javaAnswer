@@ -132,9 +132,9 @@ public class Park implements Serializable {
 
         switch (r.nextInt(3))
         {
-            case 0 :return new HonQi(number);
-            case 1 :return new ChangAn(number);
+            case 0 :return new DerivedCar1(number);
+            case 1 :return new DerivedCar2(number);
         }
-        return new Chery(number);
+        return new DerivedCar3(number);
     }
 }

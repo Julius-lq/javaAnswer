@@ -63,7 +63,7 @@ public class MyExplorer implements Explorer {
             copyFile(sourceFile, desFile);
             delFile(sourceFile);
         } else {
-            System.out.println("File Not Exists !");
+            System.out.println("文件不存在 !");
         }
     }
 
@@ -110,9 +110,9 @@ public class MyExplorer implements Explorer {
         boolean isCreated = false;
         if (!desFile.exists()) {
             if (desFile.mkdirs()) {
-                System.out.println("The destination folder < " + desFile.getName() + " > does not exist. It has been created automatically for you !");
+                System.out.println("目标文件夹 < " + desFile.getName() + " > 不存在. 已经自动创建 !");
             } else {
-                System.out.println("The destination folder < " + desFile.getName() + " > does not exist, the system failed to automatically create it for you !");
+                System.out.println("目标文件夹 < " + desFile.getName() + " > 不存在, 且无法创建该文件 !");
             }
         }
         if (name != null && suffix != null) {
@@ -166,7 +166,7 @@ public class MyExplorer implements Explorer {
             File seFile = new File(desFile.getParentFile().getAbsolutePath() + "/encoded-" + desFile.getName());
             boolean isSeFileCreated = seFile.createNewFile();
 
-            File ef = new File("C:\\Users\\Public\\encodedFiles");
+            File ef = new File("D:/encodedFiles");
             if (!ef.exists()) {
                 boolean temp = ef.mkdirs();
             }
@@ -174,7 +174,7 @@ public class MyExplorer implements Explorer {
             File passwordFile = new File(ef.getAbsolutePath() + "/" + seFile.hashCode() + ".txt");
             boolean isPwFileCreated = passwordFile.createNewFile();
 
-            System.out.println("Please Input Password (0 ~ 9 And Length < 6):");
+            System.out.println("请输入密码 (输入范围为：0 ~ 9 且密码总长度小于 6):");
             String password = new Scanner(System.in).next();
 
             RandomAccessFile raf = new RandomAccessFile(passwordFile, "rw");
@@ -196,13 +196,13 @@ public class MyExplorer implements Explorer {
             boolean isDelete = desFile.delete();//删除文件之前必须先关闭调用文件的流，否则无法删除文件
 
             if (isSeFileCreated && isPwFileCreated && isDelete) {
-                System.out.println("Encode Successfully !");
+                System.out.println("加密成功 !");
             } else {
-                System.out.println("Encode Fail !");
+                System.out.println("加密失败 !");
 
             }
         } else {
-            System.out.println("This File Not Exists !");
+            System.out.println("改文件不存在 !");
         }
     }
 
@@ -211,7 +211,7 @@ public class MyExplorer implements Explorer {
     public void decode(File desFile) throws IOException {
         if (desFile.exists()) {
 
-            File pw = new File("C:\\Users\\Public\\encodedFiles\\" + desFile.hashCode() + ".txt");
+            File pw = new File("D:/encodedFiles/" + desFile.hashCode() + ".txt");
 
             if (pw.exists()) {
                 boolean isRight = false;
@@ -222,7 +222,7 @@ public class MyExplorer implements Explorer {
                 String password = br.readLine();
                 br.close();
 
-                System.out.println("Please Input Password (0 ~ 9 And Length < 6):");
+                System.out.println("请输入密码 (输入范围为：0 ~ 9 且密码总长度小于 6):");
                 String inPut = new Scanner(System.in).nextLine();
 
                 if (password.equals(inPut)) {
@@ -247,20 +247,20 @@ public class MyExplorer implements Explorer {
                     isDelete = desFile.delete() && pw.delete();
 
                 } else {
-                    System.out.println("Password Is Wrong !");
+                    System.out.println("密码错误 !");
                 }
 
                 if (isCreated && isRight && isDelete) {
-                    System.out.println("Decode Successfully !");
+                    System.out.println("文件加密成功 !");
                 } else {
-                    System.out.println("Decode Fail !");
+                    System.out.println("文件解密失败 !");
                 }
 
             } else {
-                System.out.println("This File Is Not Encoded !");
+                System.out.println("文件未加密 !");
             }
         } else {
-            System.out.println("This File Not Exists !");
+            System.out.println("该文件不存在 !");
         }
     }
 
@@ -291,7 +291,7 @@ public class MyExplorer implements Explorer {
                 }
             }
         } else {
-            System.out.println("File printing failed, because the file does not exist !");
+            System.out.println("由于文件不存在，文件打印失败 !");
         }
 
     }
@@ -318,7 +318,7 @@ public class MyExplorer implements Explorer {
                     }
                 }
             }
-            System.out.println("File Writing Successfully !");
+            System.out.println("数据写入成功！");
         }
     }
 
@@ -350,13 +350,13 @@ public class MyExplorer implements Explorer {
             }
 
         } else if (!isExists) {
-            System.out.println("File 《" + name + "》 Not Exist !");
+            System.out.println("文件 《" + name + "》 不存在 !");
         } else if (!isDirectory) {
-            System.out.println("File 《" + name + "》 is not folder !");
+            System.out.println("文件 《" + name + "》 不是文件夹 !");
         } else if (isEmpty) {
-            System.out.println("File 《" + name + "》 Is Empty !");
+            System.out.println("文件 《" + name + "》 为空 !");
         } else {
-            System.out.println("Name Is Empty !");
+            System.out.println("文件名为空 !");
         }
     }
 }

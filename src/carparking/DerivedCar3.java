@@ -2,8 +2,8 @@ package carparking;
 
 import java.io.Serializable;
 
-public class Chery extends Car implements Serializable {
-    public Chery(String number) {
+public class DerivedCar3 extends Car implements Serializable {
+    public DerivedCar3(String number) {
         super(number);
     }
 
